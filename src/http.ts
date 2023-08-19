@@ -91,8 +91,8 @@ export async function createHttp1Request<T>(
     )
     if (options.body !== undefined) {
       const data = JSON.stringify(options.body)
-      const body = new TextEncoder().encode(data)
-      request.write(body, 'utf8')
+      //const body = new TextEncoder().encode(data)
+      request.write(data, 'utf8')
     }
 
     request.on('error', (err) => reject(err))
